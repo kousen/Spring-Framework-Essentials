@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="nf" class="java.text.NumberFormat" factory-method="getCurrencyInstance" />
+
+    <context:component-scan base-package="com.oreilly" />
+
+    <bean id="redSox" class="com.oreilly.entities.RedSox" />
+    <bean id="cubs" class="com.oreilly.entities.Cubs" />
+
+    <bean id="game" class="com.oreilly.entities.BaseballGame"
+        scope="prototype">
+        <property name="awayTeam" ref="redSox" />
+        <property name="homeTeam" ref="cubs" />
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource" />
+</beans>

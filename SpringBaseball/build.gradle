@@ -1,0 +1,5 @@
+dependencies {
+    compile 'org.springframework:spring-aop:4.2.2.RELEASE'
+    compile 'aopalliance:aopalliance:1.0'
+    compile 'org.aspectj:aspectjweaver:1.8.7'
+}
