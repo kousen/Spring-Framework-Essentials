@@ -18,7 +18,7 @@ public class BaseballGame implements Game {
 
     @PostConstruct
     public void startGame() {
-        System.out.println("Playing National Athem");
+        System.out.println("Playing National Anthem");
     }
 
     @PreDestroy

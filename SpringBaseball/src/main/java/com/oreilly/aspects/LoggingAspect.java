@@ -14,13 +14,13 @@ import java.util.logging.Logger;
 public class LoggingAspect {
     private Logger logger = Logger.getLogger(getClass().getName());
 
-//    @Before("execution(void com.oreilly..*.set*(*))")
-//    public void callSetters(JoinPoint joinPoint) {
-//        String method = joinPoint.getSignature().getName();
-//        String arg = joinPoint.getArgs()[0].toString();
-//        logger.info("Called " + method + " with arg " + arg +
-//            " on " + joinPoint.getTarget());
-//    }
+    @Before("execution(void com.oreilly..*.set*(*))")
+    public void callSetters(JoinPoint joinPoint) {
+        String method = joinPoint.getSignature().getName();
+        String arg = joinPoint.getArgs()[0].toString();
+        logger.info("Called " + method + " with arg " + arg +
+            " on " + joinPoint.getTarget());
+    }
 
     @Around("execution(String playGame())")
     public Object checkForRain(ProceedingJoinPoint pjp) throws Throwable {
