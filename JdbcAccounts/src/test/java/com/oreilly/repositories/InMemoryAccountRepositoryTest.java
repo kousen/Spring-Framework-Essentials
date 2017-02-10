@@ -18,9 +18,10 @@ import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.number.BigDecimalCloseTo.closeTo;
 import static org.junit.Assert.assertThat;
 
+@SuppressWarnings("Duplicates")
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = AppConfig.class)
-@Transactional
+// @Transactional
 @ActiveProfiles("dev")
 public class InMemoryAccountRepositoryTest {
 
