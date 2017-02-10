@@ -1,20 +1,20 @@
 buildscript {
     ext {
-        springBootVersion = '1.2.7.RELEASE'
+        springBootVersion = '1.5.1.RELEASE'
     }
     repositories {
         mavenCentral()
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}") 
-        classpath('io.spring.gradle:dependency-management-plugin:0.5.2.RELEASE')
+        classpath('io.spring.gradle:dependency-management-plugin:1.0.0.RELEASE')
     }
 }
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
-apply plugin: 'spring-boot' 
+apply plugin: 'org.springframework.boot' 
 apply plugin: 'io.spring.dependency-management' 
 
 jar {
@@ -41,8 +41,4 @@ eclipse {
          containers.remove('org.eclipse.jdt.launching.JRE_CONTAINER')
          containers 'org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8'
     }
-}
-
-task wrapper(type: Wrapper) {
-    gradleVersion = '2.7'
 }
